@@ -84,22 +84,8 @@ public class ExtentTestListener implements ITestListener {
     }
     @Override
     public void onFinish(org.testng.ITestContext context) {
-
         extent.flush();
-
-        try {
-            File reportFile = new File("test-output/AutomationReport.html");
-
-            if (Desktop.isDesktopSupported()) {
-                Desktop.getDesktop().browse(reportFile.toURI());
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    
-    }
-    
+    }    
     private String captureScreenshot(WebDriver driver, String testName) {
     	
 

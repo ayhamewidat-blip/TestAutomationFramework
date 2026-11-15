@@ -3,6 +3,7 @@ package reports;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import java.io.File;
 
 public class ExtentManager {
 
@@ -12,10 +13,13 @@ public class ExtentManager {
 
         if (extent == null) {
 
-            ExtentSparkReporter spark =
-                    new ExtentSparkReporter("test-output/AutomationReport.html");
-            System.out.println("ExtentManager: System Info Configuration Started");
+        	File reportDirectory = new File("test-output");
+        	if (!reportDirectory.exists()) {
+        	    reportDirectory.mkdirs();
+        	}
 
+        	ExtentSparkReporter spark =
+        	        new ExtentSparkReporter("test-output/AutomationReport.html");
             spark.config().setDocumentTitle("Automation Test Report");
             spark.config().setReportName("QA Automation Execution Report");
 

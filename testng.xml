@@ -1,0 +1,24 @@
+
+<suite name="Automation Test Suite">
+
+    <listeners>
+        <listener class-name="reports.ExtentTestListener"/>
+    </listeners>
+
+    <test name="Login Automation Tests">
+
+        <classes>
+
+            <class name="testcases.BrowserTest"/>
+            <class name="testcases.LoginPageTest"/>
+            <class name="testcases.UsernameTest"/>
+            <class name="testcases.PasswordTest"/>
+            <class name="testcases.ValidLoginTest"/>
+            <class name="testcases.InvalidLoginTest"/>
+            <class name="testcases.LogoutTest"/>
+
+        </classes>
+
+    </test>
+
+</suite>
